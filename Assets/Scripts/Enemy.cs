@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public bool isMoved = true;
     public float moveSpeed = 5f;
     private int currentPatrolIndex = 0;
+    [SerializeField]private GameIntEvent EventModifyLife;
     private void Update()
     {
         if (isMoved)
@@ -29,7 +30,7 @@ public class Enemy : MonoBehaviour
     {
         if(collision.GetComponent<SpriteRenderer>().color != this.GetComponent<SpriteRenderer>().color)
         {
-            HealthSystem.modifyHealth(value);
+            EventModifyLife.Raise(value);
         }
         else
         {

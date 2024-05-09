@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 1
+  EventModifyCoins: {fileID: 11400000, guid: bfe8ee3d67208eb4ebf8eb49ed8bdabd, type: 2}
 --- !u!61 &229781964458707240
 BoxCollider2D:
   m_ObjectHideFlags: 0

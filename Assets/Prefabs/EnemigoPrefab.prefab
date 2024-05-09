@@ -104,6 +104,7 @@ MonoBehaviour:
   - {fileID: 9147957563072716553}
   isMoved: 0
   moveSpeed: 5
+  EventModifyLife: {fileID: 11400000, guid: ca226062f388ea64e97738a21ff668f2, type: 2}
 --- !u!61 &6925686507070590143
 BoxCollider2D:
   m_ObjectHideFlags: 0

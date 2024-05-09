@@ -9,21 +9,27 @@ public class HealthSystem : MonoBehaviour
     public static Action<int> modifyHealth;
     public static Action<int> updateHealth;
     public int Health = 10;
-    public UnityEvent OnPlayerDeath;
     public UI_Manager uiCurrent;
+    [SerializeField] private GameIntEvent EventUpdateLife;
+    [SerializeField] private GameIntEvent EventOnLose;
+
+    //[SerializeField] GameIntEvent ModifyLife;
     private void Start()
     {
-        modifyHealth = (a) => { UpdateCurrentHealth(a); };
+        //modifyHealth += UpdateCurrentHealth;
         updateHealth = uiCurrent.UpdateLife;
         updateHealth(Health);
     }
-    private void UpdateCurrentHealth(int test)
+    public void UpdateCurrentHealth(int test)
     {
+        Debug.Log("HoLA");
         Health = Math.Clamp(Health + test, 0, 10);
-        updateHealth(Health);
+        EventUpdateLife.Raise(Health);
+        //updateHealth(Health);
         if (Health == 0)
         {
-            OnPlayerDeath.Invoke();
+            EventOnLose.Raise(1);
+            //OnPlayerDeath.Invoke();
         }
     }
 }

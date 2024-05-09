@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Value: 3
+  EventModifyLife: {fileID: 11400000, guid: ca226062f388ea64e97738a21ff668f2, type: 2}
 --- !u!61 &8975825141718192568
 BoxCollider2D:
   m_ObjectHideFlags: 0
